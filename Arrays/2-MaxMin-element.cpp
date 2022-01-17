@@ -5,7 +5,7 @@ using namespace std;
 
 int max(int arr[],int n)
 {
-  sort(arr,arr+n-1);
+  sort(arr,arr+n+1);
   return arr[n-1];
 }
 
