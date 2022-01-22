@@ -25,5 +25,5 @@ int main()
    int n=sizeof(arr)/size0f(arr[n]);
    RotatePtr(arr,n);
    RotateShift(arr,n);
-   
+   return 0;
 }
