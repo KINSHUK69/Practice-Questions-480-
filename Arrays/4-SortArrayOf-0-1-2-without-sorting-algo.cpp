@@ -15,7 +15,7 @@ void sort012(int arr[], int n)
         }                       
         Time Complexity : O(n*n)
         */
-      
+      /*
         //  sort(arr,arr+n);        // Time complexity : O(nlogn)
        
         int i, cnt0 = 0, cnt1 = 0, cnt2 = 0;
@@ -63,5 +63,37 @@ void sort012(int arr[], int n)
         
        
     }
+*/
+    class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        int l=0,m=0,h=nums.size()-1;
+        
+        while(m<=h){
+            
+            // if(nums[m]==0){
+            //     swap(nums[l++],nums[m++]);                
+            // }
+            // if(nums[m]==1){
+            //     m++;
+            // }
+            // if(nums[m]==2){
+            //     swap(nums[m],nums[h--]);                
+            // }
+            switch(nums[m]){
+                case 0:
+                    swap(nums[l++],nums[m++]);
+                    break;
+                case 1:
+                    m++;
+                    break;
+                case 2:
+                    swap(nums[m],nums[h--]);
+                    break;
+            }
+        }
+    }
+};
+
     
 };
