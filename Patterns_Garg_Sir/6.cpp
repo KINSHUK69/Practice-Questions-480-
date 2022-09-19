@@ -1,5 +1,14 @@
 #include<iostream>
 using namespace std;
+/* 
+
+12345
+1234
+123
+12
+1
+   
+*/
  void pattern(int n)
  {
     for(int i=n;i>0;i--)
