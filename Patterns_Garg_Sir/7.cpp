@@ -1,28 +1,31 @@
 #include<iostream>
 using namespace std;
-/* 
 
-    *
-   ***
-  *****
- *******
-*********
+/*
+
+   *
+  ***
+ *****
+*******
 
 */
 
 void pattern(int n)
 {
-    for(int i=n-1;i>0;i--)
-    {
-        cout<<" ";
-        for(int j=0;j<(n-i);j++){
-            cout<<"* ";
+    int i=0,j=0,k=0;
+    for(int i=n;i>0;i--){
+        // spaces 
+        while(j<=n-i-1){
+            cout<<" ";
+            j++;
         }
-        for(int k=0;k<n;k++)
-        cout<<"* ";
-
+        j=0;
+        while(k<(i*2-1)){
+            cout<<"*";
+            k++;
+        }
+        k=0;
         cout<<endl;
-
     }
 }
 int main()
