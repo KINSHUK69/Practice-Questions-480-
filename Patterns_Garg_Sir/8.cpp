@@ -1,13 +1,38 @@
 #include<iostream>
 using namespace std;
 
-void print(int n){
+/* 
+  
 
+*******
+ *****
+  ***
+   *
+   
+*/
+
+void pattern(int n)
+{
+    int i=0,j=0,k=0;
+    for(int i=n;i>0;i--){
+        // spaces 
+        while(j<=n-i-1){
+            cout<<" ";
+            j++;
+        }
+        j=0;
+        while(k<(i*2-1)){
+            cout<<"*";
+            k++;
+        }
+        k=0;
+        cout<<endl;
+    }
 }
-int main(){
+int main()
+{
     int n;
     cin>>n;
-    print(n);
-
+    pattern(n);
     return 0;
 }
