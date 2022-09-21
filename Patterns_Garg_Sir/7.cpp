@@ -13,13 +13,14 @@ using namespace std;
 void pattern(int n)
 {
     int i=0,j=0,k=0;
-    for(int i=n;i>0;i--){
+    for(int i=1;i<=n;i++){
         // spaces 
         while(j<=n-i-1){
             cout<<" ";
             j++;
         }
         j=0;
+        // stars
         while(k<(i*2-1)){
             cout<<"*";
             k++;
