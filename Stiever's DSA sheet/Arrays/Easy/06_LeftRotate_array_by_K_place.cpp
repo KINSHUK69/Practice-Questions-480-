@@ -28,7 +28,7 @@ public:
         
       
         reverse(nums.begin(),(nums.begin()+nums.size())-k);  //reverse the first part
-        reverse(nums.size()-k,nums.end());                    // reverse the second part  
+        reverse(nums.begin()+k+1,nums.end());                     // reverse the second part  
         reverse(nums.begin(),nums.end());                     // now reverse the whole array together
         
         
