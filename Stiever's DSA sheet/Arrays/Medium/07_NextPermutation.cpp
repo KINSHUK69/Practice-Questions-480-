@@ -15,10 +15,12 @@ public:
   
   
   // USING NARAYAN'S PANDITHA'S ALGORITHM  // T.C. = O(N)  S.C. = O(1)
-   void nextPermutation(vector<int>& nums) {
+   void nextPermutation(vector<int>& nums) 
+   {
         //next_permutation(nums.begin(),nums.end());
         int k1,k2,i,n=nums.size();
-        for(i=n-2;i>=0;i--)
+     
+        for(i=n-2;i>=0;i--)     // finding the 1st index where a[i]<a[i+1]
         {
             if(nums[i]<nums[i+1]) {
                 k1=i;
@@ -30,7 +32,7 @@ public:
             reverse(nums.begin(),nums.end());
         else
         {
-            for(i=n-1;i>k1;i--)
+            for(i=n-1;i>k1;i--) // finding the 2nd index where a[i]<a[k1]
             {
                 if(nums[i]>nums[k1]){
                     k2=i;
@@ -47,4 +49,4 @@ public:
        
     }
 };
-};
+
