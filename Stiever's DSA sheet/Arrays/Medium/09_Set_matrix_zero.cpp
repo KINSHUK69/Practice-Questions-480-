@@ -6,10 +6,10 @@ Output:  [1,0,1]
          [0,0,0]
          [1,0,1]
 */
-void setZeroes(int[][] matrix)    // T.C. = O(M*N*K)
+void setZeroes(int[][] matrix)    // T.C. = O(M*N*K)		S.C. = O(1)
 {
 
-		int m= matrix.length, n= matrix[0].length;
+	int m= matrix.length, n= matrix[0].length;
         int matrix2[][]= new int[m][n];
         for(int i=0;i<m;i++){
             for(int j=0;j<n;j++)
@@ -36,7 +36,7 @@ void setZeroes(int[][] matrix)    // T.C. = O(M*N*K)
 
 
 
-//  T.C. = O(MN)
+//  T.C. = O(MN)		S.C. = O(1)
 void setZeroes(int[][] matrix)   
 {
  int rows = matrix.size(), cols = matrix[0].size();
