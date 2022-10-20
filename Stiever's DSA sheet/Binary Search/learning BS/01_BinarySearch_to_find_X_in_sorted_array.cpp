@@ -14,4 +14,10 @@ public:
         
         return -1;
     }
+    
+    // USING STL            // T.C. = O(logN)
+     int search(vector<int>& n, int t) 
+     {
+        return (binary_search(n.begin(),n.end(), t)) ? (lower_bound(n.begin(), n.end(), t) - n.begin()) : -1;
+    }
 };
