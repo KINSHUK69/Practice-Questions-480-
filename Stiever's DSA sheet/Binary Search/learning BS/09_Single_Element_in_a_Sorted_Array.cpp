@@ -17,4 +17,13 @@ public:
         
         return -1;
     }
+    
+    int singleNonDuplicate(vector<int>& nums) // T.C. = O(n)  S.C. = O(1)
+    {
+        int sum=0;
+        for(auto it:nums) 
+            sum^=it;
+        
+        return sum;
+    }
 };
