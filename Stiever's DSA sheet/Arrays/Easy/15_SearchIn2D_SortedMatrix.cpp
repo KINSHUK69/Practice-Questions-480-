@@ -1,5 +1,15 @@
 class Solution {
 public:
+    bool searchMatrix(vector<vector<int>>& matrix, int target) // T.C. = O(i*j)  //USING LINEAR SEARCH
+    {
+        for(auto i:matrix){
+            for(auto j:i){
+                if(j==target) return true;
+            }
+        }
+        return false;
+    }
+	
     bool searchMatrix(vector<vector<int>>& matrix, int target)    // T.C. = O(log(m+n))  //USING BINARY SEARCH
     {
        
