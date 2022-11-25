@@ -11,14 +11,14 @@ public:
             m=s+(e-s)/2;
             if(nums[m]==target) return m;
          
-          // dividing the arrau into two parts which are like sorted induidally.  [4,5,6,7] [0,1,2]
+          // dividing the array into two parts which are like sorted induidally.  [4,5,6,7] [0,1,2]
            
           if(nums[s]<=nums[m]){
-                if(nums[s]<=target && nums[m]>=target) e=m-1;
+                if(nums[s]<=target && nums[m]>=target) e=m-1;   // if the target is in between the start and the mid
                 else s=m+1;
             }
             else{
-                if(nums[m]<=target && nums[e]>=target) s=m+1;
+                if(nums[m]<=target && nums[e]>=target) s=m+1;   // if the target is in between the mid and the end
                 else e=m-1;
             }
         }
