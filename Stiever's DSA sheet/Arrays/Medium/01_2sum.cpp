@@ -27,17 +27,16 @@ Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
 
 vector<int> twoSum(vector<int>& nums, int target) // T.C. = O(n) S.C. = O(n)
 {
-        vector<int>arr;
+        
         unordered_map<int,int>m;
         for(int i=0;i<nums.size();i++)
         {
             if(m.find(target-nums[i])!=m.end())
-            {
-                arr.push_back(i);
-                arr.push_back(m[target-nums[i]]);
-                return arr;
+            {                
+                return {i,m[target-nums[i]};
             }
+            else
             m[nums[i]]=i;
         }
-        return arr;
+        return {-1,-1};
     }
