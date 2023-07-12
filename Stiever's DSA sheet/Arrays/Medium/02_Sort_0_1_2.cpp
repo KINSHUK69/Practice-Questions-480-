@@ -29,3 +29,30 @@ public:
         }
     }
 };
+
+// count sort T.C. = O(3n)
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        int red=0,white=0,blue=0;
+        for(auto it:nums){
+            if(it==0)red++;
+            if(it==1)white++;
+            if(it==2)blue++;    
+            
+        }
+        int i=0;
+        while(red>0){
+            nums[i++]=0;
+            red--;
+        }
+        while(white>0){
+            nums[i++]=1;
+            white--;
+        }
+        while(blue>0){
+            nums[i++]=2;
+            blue--;
+        }
+    }
+};
