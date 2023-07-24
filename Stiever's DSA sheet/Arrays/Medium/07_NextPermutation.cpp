@@ -14,7 +14,7 @@ public:
   
   
   
-  // USING NARAYAN'S PANDITHA'S ALGORITHM  // T.C. = O(N)  S.C. = O(1)
+  // USING NEXT PERMUATTION ALGORITHM  // T.C. = O(N)  S.C. = O(1)
    void nextPermutation(vector<int>& nums) 
    {
         //next_permutation(nums.begin(),nums.end());
