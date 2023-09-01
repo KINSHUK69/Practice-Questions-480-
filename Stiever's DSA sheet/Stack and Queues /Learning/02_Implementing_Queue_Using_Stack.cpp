@@ -1,3 +1,4 @@
+// push operation O(N)+O(N) method 
 class MyQueue {
     stack<int>a;
     stack<int>b;
@@ -31,6 +32,45 @@ public:
     
     bool empty() {
         return a.empty();
+    }
+};
+// push operation O(1) Amortized Method
+class MyQueue {
+    stack<int>a;
+    stack<int>b;
+public:
+    MyQueue() {
+        
+    }
+    
+    void push(int x) {        
+        a.push(x);
+    }
+    
+    int pop() {
+        if(b.empty()){
+            while(!a.empty()){
+                b.push(a.top());
+                a.pop();
+            }
+        }
+        int data=b.top();
+        b.pop();
+        return data;
+        
+    }
+    
+    int peek() {
+        if(b.empty()){
+            while(!a.empty()){
+                b.push(a.top()),a.pop();
+            }
+        }
+        return b.top();
+    }
+    
+    bool empty() {
+        return b.empty() and a.empty();
     }
 };
 
