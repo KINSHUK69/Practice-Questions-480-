@@ -26,7 +26,7 @@ public:
         return st.top().second;
     }
 };
-// T.C.= O(1) S.C.= O(1)
+// T.C.= O(1) S.C.= O(N)
 class MinStack {
     stack<long long>st;
     long long minimum;
@@ -44,7 +44,7 @@ public:
             st.push(val);
         }
         else if(minimum>val){
-            st.push(2*v-minimum);
+            st.push(2*v-minimum);   
             minimum=val;
         }
         else 
@@ -54,7 +54,10 @@ public:
     
     void pop() {
         if(st.top()<minimum)
-            minimum=2*minimum-st.top();
+            minimum=2*minimum-st.top();  
+            // as st.top() = 2*val - previous_minimum 
+            // so the new minimum = 2*minumum - 2*min + previous_mimimum, 
+            // now the minimum = previous_minimum
         st.pop();
     }
     
