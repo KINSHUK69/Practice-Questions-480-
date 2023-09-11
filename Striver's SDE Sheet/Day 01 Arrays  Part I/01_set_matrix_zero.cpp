@@ -66,8 +66,11 @@ void setZeroes(vector<vector<int>>& matrix) {
 //  T.C. = O(MN)		S.C. = O(1)
 void setZeroes(int[][] matrix)   
 {
- int rows = matrix.size(), cols = matrix[0].size();
- bool col0=true;
+    int rows = matrix.size(), cols = matrix[0].size();
+    bool col0=true;
+
+	
+    // making the first row and first column 0 if they contain any 0 in entire row or column
 
     for (int i = 0; i < rows; i++) {
         if (matrix[i][0] == 0) col0 = false;
@@ -78,10 +81,12 @@ void setZeroes(int[][] matrix)
 	    }
     }
 
+   // if the first column or the row is 0 then making the entire column and row 0
+
     for (int i = rows - 1; i >= 0; i--) {
         for (int j = cols - 1; j >= 1; j--)
             if (matrix[i][0] == 0 || matrix[0][j] == 0) matrix[i][j] = 0;
 	    
-        if (col0 == false) matrix[i][0] = 0;
+        if (col0 == false) matrix[i][0] = 0; // then make the entire row 0
     }
 }
