@@ -1,3 +1,6 @@
+// Using mono tic stack and % for circular cases 
+// T.C. = O(n)    
+// S.C. = O(n)
 class Solution {
 public:
     vector<int> nextGreaterElements(vector<int>& nums) {
