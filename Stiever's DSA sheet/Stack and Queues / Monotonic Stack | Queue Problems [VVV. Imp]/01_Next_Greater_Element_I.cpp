@@ -1,3 +1,4 @@
+// Brute Force 
 // T.C. = O(n^3)    
 // S.C. = O(n)
 class Solution {
@@ -23,5 +24,31 @@ public:
           
         }
         return ans;        
+    }
+};
+// Optimal solution : Using Monotic Stack
+// T.C. = O(n+m)    
+// S.C. = O(n)
+class Solution {
+public:
+    vector<int> nextGreaterElement(vector<int>& nums1, vector<int>& nums2) {
+        
+        vector<int>ans(nums1.size(),-1);
+        unordered_map<int,int>mp;
+        stack<int>s;
+
+        for(auto it:nums2){
+          while(!s.empty() && s.top()<it){
+            mp[s.top()]=it;
+            s.pop();
+          }
+          s.push(it);
+        }
+        for(int i=0;i<nums1.size();i++){
+          if(mp[nums1[i]])
+            ans[i]=mp[nums1[i]];
+        }
+        return ans;
+
     }
 };
