@@ -27,3 +27,34 @@ public:
         
     }
 };
+// Two pointer
+// T.C. = O(n)
+// S.C. = O(1)
+class Solution {
+public:
+    int trap(vector<int>& h) {
+        int ans=0,left=0,right=h.size()-1;
+        int leftMax=0,rightMax=0; // to keep track of max from  left and right 
+
+        while(left<=right){
+            
+            if(h[left]<=h[right]){   // then there exist an greater wall in the right of the index
+                if(h[left]>=leftMax)
+                    leftMax=h[left];
+                else 
+                    ans+=leftMax-h[left];
+
+                left++;
+            }
+            else{                    // then there exist an greater wall in the left of the index
+                if(h[right]>=rightMax)
+                    rightMax=h[right];
+                else
+                    ans+=rightMax-h[right];
+
+                right--;
+            }
+        }
+        return ans;        
+    }
+};
