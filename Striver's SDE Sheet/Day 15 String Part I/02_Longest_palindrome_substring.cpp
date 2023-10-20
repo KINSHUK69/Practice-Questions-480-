@@ -92,4 +92,36 @@ public:
         }
         return ans;
     }
+
+ // Manacher's Algorithm : T.C. : O(2n+1) => O(n)
+    string convert(string s){
+        string str;
+        for(auto c:s){
+            str+=string("#")+c;
+        }
+        return str+"#";
+    }
+    string longestPalindrome(string s) {
+        string str=convert(s);
+        str="$"+str+"^"; // for parity handling both odd and even cases
+        
+        int n=str.length();
+        vector<int> P(n); // Array to store palindrome lengths;
+       
+       int l=1,r=1;
+       int maxLen=0,maxCenter=0;
+
+       for(int i=1;i<n;i++){
+
+           P[i]=max(0,min(r-i,P[l+(r-i)]));
+
+           while(str[i-P[i]-1] == str[i+P[i]+1])  P[i]++;           
+
+           if(i+P[i] > r) l=i-P[i], r=i+P[i];           
+
+           if(P[i]>maxLen) maxLen=P[i], maxCenter=i;           
+       }
+       int start=(maxCenter-maxLen)/2;
+       return s.substr(start,maxLen);
+    }
 };
