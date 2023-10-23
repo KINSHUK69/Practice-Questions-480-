@@ -15,7 +15,7 @@ public:
         vector<vector<int>>ans;
         if(!root)return ans;
 
-        queue<pair<TreeNode*,pair<int,int>>>q;        //   node, x, y  |  x represents left ot right  |  y represent level
+        queue<pair<TreeNode*,pair<int,int>>>q;        //   node, x, y  |  x represents left or right  |  y represent level
         q.push({root,{0,0}});
         map<int,map<int,multiset<int>>>mp;            //   vertical, level,multiple nodes  |  so use multiset as it stores in sorted order and stores duplicates 
 
