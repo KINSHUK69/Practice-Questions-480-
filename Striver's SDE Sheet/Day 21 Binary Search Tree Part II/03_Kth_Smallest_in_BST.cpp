@@ -26,7 +26,7 @@ public:
         return in[k-1];
     }
 };
-// USING INORDER TRAVERSAL : starting from the left most 
+// USING INORDER TRAVERSAL : starting from the left most for the minimun || and the right most for the maximum
 // T.C. = O(min(k,n))
 // S.C. = O(min(k,n))
 class Solution {
