@@ -8,7 +8,8 @@ public:
         if(i==nums.size())return 0;
 
         int len=solve(i+1,pre,nums,ds);
-        if(pre==-1 || nums[i]>nums[pre]) len=max(len,1+solve(i+1,i,nums,ds));
+        if(pre==-1 || nums[i]>nums[pre]) 
+            len=max(len,1+solve(i+1,i,nums,ds));
         return len;
     }
     int lengthOfLIS(vector<int>& nums) {
